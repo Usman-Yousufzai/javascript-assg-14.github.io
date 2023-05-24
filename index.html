@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .display {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Log In</h1>
+        <div class="form-group">
+            <label for="bar-1">Name</label>
+            <input type="text" id="bar-1" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="bar-2">Age</label>
+            <input type="text" id="bar-2" placeholder="Enter Age">
+        </div>
+        <div class="form-group">
+            <label for="bar-3">Birth Year</label>
+            <input type="text" id="bar-3" placeholder="Enter Birth Year">
+        </div>
+        <button type="button" class="btn" onclick="add()">Add User</button>
+        <p class="display" id="display"></p>
+    </div>
+    <script>
+        function add() {
+            var name = document.getElementById("bar-1").value;
+            var age = document.getElementById("bar-2").value;
+            var birthYear = document.getElementById("bar-3").value;
+
+            var person = {
+                Name: name,
+                Age: age,
+                BirthYear: birthYear
+            };
+
+            var display = document.getElementById("display");
+            display.innerText = `Name: ${person.Name}, Age: ${person.Age}, Birth Year: ${person.BirthYear}`;
+
+            console.log(person);
+        }
+    </script>
+</body>
+</html>
